@@ -6,10 +6,59 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.1.min.css" type="text/css" />
+		<link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.1.min.css" type="text/css" />
+		 <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.1.min.js"></script>
+		 <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.1.min.js"></script>
+		{{figJS |safe}}
 	</head>
 	<body>
 		<div>
-  			<h1>Hello, World!</h1>
+			<h3 class="col-xs-12">
+				Lets plot some stock data: {{num}}
+			</h3>
+			<div class="col-xs-12">
+				<form class="col-xs-12" method="post" action="graph">
+					<input class="col-xs-12" type="text" placeholder="Add a stock ticker and select a price to plot" name="st"/>
+					<div class="col-xs-4">
+						<input type="checkbox" name="features" value="Open"/>
+						<span>Opening price</span>
+					</div>
+
+					<div class="col-xs-4">
+						<input type="checkbox" name="features" value="Close"/>
+						<span>Closing price</span>
+					</div>
+
+					<div class="col-xs-4">
+						<input type="checkbox" name="features" value="High"/>
+						<span>High</span>
+					</div>
+					<div class="col-xs-4">
+						<input type="checkbox" name="features" value="Low"/>
+						<span>Low</span>
+					</div>
+
+					<div class="col-xs-4">
+						<input type="checkbox" name="features" value="Volume"/>
+						<span>Volume</span>
+					</div>
+
+					<div class="col-xs-4">
+						<input type="checkbox" name="features" value="Split Ratio"/>
+						<span>Split Ratio</span>
+					</div>
+
+					<hr class="col-xs-12">
+					<button class="btn col-xs-12" type="submit">submit</button>
+					
+				</form>
+				<hr class="col-xs-12">
+				<div class="bokeh col-xs-12">
+					{{figDiv |safe}}
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

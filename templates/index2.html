@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Hello, World!</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<h3 class="col-xs-12">
+				Get some stock data:
+			</h3>
+			<div class="col-xs-12">
+				<form class="col-xs-12" action="graph" method="POST">
+					<input class="col-xs-6"  type="text" placeholder="Add a stock abbr. and select a price to plot"/>
+					<div class="col-xs-3">
+						<input type="checkbox" name="fields" value="Open"/>
+						<span>Opening price</span>
+					</div>
+
+					<div class="col-xs-3">
+						<input type="checkbox" name="fields" value="Close"/>
+						<span>Closing price</span>
+					</div>
+					<hr class="col-xs-12">
+					<button class="btn col-xs-12" type="submit">submit</button>
+				</form>
+				
+			</div>
+		</div>
+	</body>
+</html>
