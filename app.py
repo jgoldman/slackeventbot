@@ -25,13 +25,13 @@ def get_random_color(pastel_factor = 0.5):
 
 "https://www.quandl.com/api/v3/datasets/FRED/GDP/data.json?rows=1"
 
-app_sp = Flask(__name__)
-app_sp.data={}
-@app_sp.route('/')
+app = Flask(__name__)
+app.data={}
+@app.route('/')
 def main():
   return redirect('/index')
 
-@app_sp.route('/graph', methods=['POST'])
+@app.route('/graph', methods=['POST'])
 def getData():
 	print('request')
 	print(request)
@@ -53,9 +53,9 @@ def getData():
 	figJS,figDiv = components(plot,CDN)
 	return render_template('/index.html', figJS=figJS, figDiv=figDiv)
 
-@app_sp.route('/index')
+@app.route('/index')
 def index():
   return render_template('index.html')
 
 if __name__ == '__main__':
-  app_sp.run(port=33509)
+  app.run(port=33507)
