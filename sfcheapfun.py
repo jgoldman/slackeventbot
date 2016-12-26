@@ -1,9 +1,4 @@
-import string
 import requests
-import re
-import os
-import nltk
-import numpy
 from bs4 import BeautifulSoup
 from slackclient import SlackClient
 import time
