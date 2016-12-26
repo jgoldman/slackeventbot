@@ -2,9 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 from slackclient import SlackClient
 import time
-
+slack_token_bawsco = 'xoxp-6354740753-101554727523-121009606037-535cfd995d88810d73cf1a3283ae9a84'
 slack_token = 'xoxp-120041460657-120720635442-120652984483-ebf82c75b08c59633355a55bb9b03747'
-sc = SlackClient(slack_token)
+sc = SlackClient(slack_token_bawsco)
 
 def grab_html_source(link):
    """
@@ -39,7 +39,7 @@ for e in elements:
 		else:
 			
 			event_detail = e.find(attrs={'class': 'title'}).find('a')
-			events[current_el].append('<'+event_detail['href'] + '|' + event_detail.text+'>')
+			events[current_el].append('• <'+event_detail['href'] + '|' + event_detail.text+'>')
 	except:
 		pass
 months = {'01': 'january','02': 'february','03': 'march','04': 'april','05': 'may','06': 'june','07': 'july','08': 'august','09': 'september','10': 'october','11': 'november','12': 'december'}
@@ -51,7 +51,7 @@ current_day =  time.strftime('%d')
 
 sc.api_call(
   "chat.postMessage",
-  channel="#general",
+  channel="#sf_events",
   username="eventGuide",
   text='<http://sf.funcheap.com/category/event/top-pick/|Top Events for ' + time.strftime('%m/%d') + ':>\n>>>' + '\n'.join(events[current_day])
 )
