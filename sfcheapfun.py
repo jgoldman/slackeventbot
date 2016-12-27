@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import requests
 from bs4 import BeautifulSoup
 from slackclient import SlackClient
@@ -37,10 +39,8 @@ for e in elements:
 			current_el = e.text.split(', ')[1].lower().split(' ')[1]
 			events[current_el] = []
 		else:
-			
 			event_detail = e.find(attrs={'class': 'title'}).find('a')
-			event_string = '•' + '<'+event_detail['href'] + '|' + event_detail.text+'>'
-			events[current_el].append(event_string.decode('utf-8'))
+			events[current_el].append('• <'+event_detail['href'] + '|' + event_detail.text+'>')
 	except:
 		pass
 months = {'01': 'january','02': 'february','03': 'march','04': 'april','05': 'may','06': 'june','07': 'july','08': 'august','09': 'september','10': 'october','11': 'november','12': 'december'}
