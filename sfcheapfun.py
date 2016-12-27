@@ -52,7 +52,7 @@ sc.api_call(
   "chat.postMessage",
   channel="#general",
   username="eventGuide",
-  text='<http://sf.funcheap.com/category/event/top-pick/|Top Events for ' + time.strftime('%m/%d') + ':>\n>>>' + '\n'.join(events[current_day])
+  text='<http://sf.funcheap.com/category/event/top-pick/|Top Events for ' + time.strftime('%m/%d') + ':>\n>>>' + '\n\t'.join(events[current_day])
 )
 		
 	
