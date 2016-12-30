@@ -1,3 +1,4 @@
+print(__name__)
 import requests
 from bs4 import BeautifulSoup
 from slackclient import SlackClient
@@ -46,7 +47,10 @@ def __main__():
 			pass
 	months = {'01': 'january','02': 'february','03': 'march','04': 'april','05': 'may','06': 'june','07': 'july','08': 'august','09': 'september','10': 'october','11': 'november','12': 'december'}
 	# day_list = [d.text.split(', ')[1].lower().split(' ') for d in days]
-
+	print('test 123')
 	current_day =  time.strftime('%d')
 	# current_day = current_day.split('/')
 	return {'http://sf.funcheap.com/category/event/top-pick/': events[current_day]}
+
+	# if __name__ == '__main__':
+ #    hello()
