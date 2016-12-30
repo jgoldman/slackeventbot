@@ -29,4 +29,4 @@ def main():
 			  text='<' + key +'| Top Events of ' + domain + ' for ' + time.strftime('%m/%d') + ':>\n>>>' + '\n'.join(value)
 			)
 if __name__ == "__main__":
-  main()
+  main() 
