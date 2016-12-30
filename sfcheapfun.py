@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-from slackclient import SlackClient
 import time
 
 def grab_html_source(link):
