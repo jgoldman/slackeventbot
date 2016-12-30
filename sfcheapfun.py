@@ -1,12 +1,7 @@
-print(__name__)
 import requests
 from bs4 import BeautifulSoup
 from slackclient import SlackClient
 import time
-
-# slack_token = 'xoxp-6354740753-101554727523-121009606037-535cfd995d88810d73cf1a3283ae9a84'
-slack_token = 'xoxp-120041460657-120720635442-120652984483-ebf82c75b08c59633355a55bb9b03747'
-sc = SlackClient(slack_token)
 
 def grab_html_source(link):
    """
