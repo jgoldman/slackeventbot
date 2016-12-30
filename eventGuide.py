@@ -10,7 +10,7 @@ sc = SlackClient(slack_token)
 
 wdir = './scrapers/'
 for scraper in os.listdir(wdir):
-	new_events = subprocess.call(["python", wdir + scraper])
+	new_events = subprocess.check_output(['python', wdir + scraper])
 	print(new_events)
 	for key, value in new_events.items():
 		domain = key.split('/')[0]
