@@ -31,7 +31,6 @@ def main():
   current_el = None
   events = {}
 
-  months = {'01': 'january','02': 'february','03': 'march','04': 'april','05': 'may','06': 'june','07': 'july','08': 'august','09': 'september','10': 'october','11': 'november','12': 'december'}
   current_day =  time.strftime('%d')
 
   for e in elements:
@@ -39,6 +38,8 @@ def main():
       class_string = ''.join(e['class'])
       if class_string == 'archive_date_title':
         current_el = e.text.split(', ')[1].lower().split(' ')[1]
+        if len(current_el) == 1:
+          current_el = '0' + current_el
         events[current_el] = []
       else:
         event_detail = e.find(attrs={'class': 'title'}).find('a')
