@@ -22,7 +22,7 @@ def main():
 			sc.api_call(
 			  "chat.postMessage",
 			  # channel="#sf_events",
-			  channel="#" + "sys.argv[2]",
+			  channel="#" + sys.argv[2],
 			  username="eventGuide",
 			  text='<' + key +'| Top Events of ' + domain + ' for ' + time.strftime('%m/%d') + ':>\n>>>' + '\n'.join(value)
 			)
